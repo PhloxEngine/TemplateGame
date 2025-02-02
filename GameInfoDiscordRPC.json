@@ -1,0 +1,22 @@
+{
+    "title": "Your Game Name!",
+    "version": "1.0.0",
+    "author": "You!",
+    "window": {
+        "width": 800,
+        "height": 600
+    },
+    "initialState": "PlayState",
+    "source": "source",
+    "assets": "assets",
+    "discord": {
+        "enabled": true,
+        "applicationId": "your_app_id_here",
+        "state": "Playing Game",
+        "details": "In Level 1",
+        "largeImageKey": "game_icon",
+        "largeImageText": "My Awesome Game",
+        "smallImageKey": "status_icon",
+        "smallImageText": "In Progress"
+    }
+} 

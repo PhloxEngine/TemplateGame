@@ -6,7 +6,5 @@
         "width": 800,
         "height": 600
     },
-    "initialState": "PlayState",
-    "source": "source",
-    "assets": "assets"
-} 
+    "initialState": "PlayState"
+}
