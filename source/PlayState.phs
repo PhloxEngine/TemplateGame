@@ -1,0 +1,29 @@
+class PlayState extends State {
+    var sprite;
+
+    // Constructor function
+    function create() {
+        trace("PlayState created!\n");
+        
+        sprite = Sprite.create("assets/images/teto.png");
+        sprite.setPosition(400, 300);
+        sprite.setScale(0.5, 0.5);
+        sprite.setVisible(true);
+        sprite.add();
+    }
+
+    /* Update function
+       Called every frame */
+    function update() {
+    }
+
+    // Render function
+    function render() {
+        sprite.render();
+    }
+
+    function destroy() {
+        sprite.destroy();
+        trace("PlayState destroyed!\n");
+    }
+} 
