@@ -1,19 +1,45 @@
 class PlayState : public State {
+private:
+    Sprite* m_playerSprite;
+    float m_playerX;
+    float m_playerY;
+
 public:
     void Create() override {
-        trace("PlayState created yeah haha");
+        trace("PlayState created");
+        
+        trace("Creating player sprite...");
+        m_playerSprite = new Sprite();
+        trace("Loading sprite from: assets/images/tetoPE.png");
+        if (!m_playerSprite->LoadFromFile("assets/images/tetoPE.png")) {
+            trace("Failed to load player sprite!");
+            return;
+        }
+        trace("Player sprite loaded successfully!");
+        
+        m_playerX = (800 - m_playerSprite->GetWidth() * 0.5) / 2;
+        m_playerY = (600 - m_playerSprite->GetHeight() * 0.5) / 2;
+        
         super.Create();
     }
 
-    void Update(float elapsed) override {
+    void Update(float elapsed) override {        
         super.Update(elapsed);
     }
 
     void Render() override {
+        glClearColor(0.0f, 0.1f, 0.2f, 1.0f);
+        glClear(GL_COLOR_BUFFER_BIT);
+        
+        if (m_playerSprite) {
+            m_playerSprite->Render(m_playerX, m_playerY, 0.5);
+        }
+        
         super.Render();
     }
 
     void Destroy() override {
+        delete m_playerSprite;
         super.Destroy();
     }
 };

@@ -25,6 +25,11 @@ if [ ! -f source/*.phs ]; then
     exit 1
 fi
 
+if [ ! -d "assets" ]; then
+    echo "Warning: No assets directory found!"
+    mkdir -p assets
+fi
+
 command="./lettuce GameInfo.json"
 for f in source/*.phs; do
     command="$command \"$f\""

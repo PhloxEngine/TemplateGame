@@ -26,6 +26,11 @@ if not exist "source\*.phs" (
     exit /b 1
 )
 
+if not exist "assets" (
+    echo Warning: No assets directory found!
+    mkdir assets
+)
+
 set "command=Lettuce.exe GameInfo.json"
 for %%f in (source\*.phs) do (
     set "command=!command! "%%f""
